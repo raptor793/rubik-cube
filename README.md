@@ -7,6 +7,11 @@ The program is build using WPF for Windows.
 Visual Studio 2022 Community Edition
 .Net 8
 
+Also you need to have this installed for .Net desktop development
+
+![Desktop Development](https://github.com/user-attachments/assets/4bf1ad88-73fa-416e-be28-d4da4581b795)
+
+
 ##How to build:
 
 Clone the repository and build the solution with Visual Studio
