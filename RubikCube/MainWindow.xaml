@@ -1,0 +1,269 @@
+﻿<Window x:Class="RubikCube.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RubikCube"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="Rubic Cube - Flat View" Height="650" Width="800">
+    <Grid Name="Cube">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Up Face-->
+        <ItemsControl ItemsSource="{Binding TopFace}" Grid.Row="0" Grid.Column="1" Margin="0,20,0,0">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemContainerStyle>
+                <Style TargetType="ContentPresenter">
+                    <Setter Property="Grid.Row" 
+                        Value="{Binding CubletRow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Setter Property="Grid.Column" 
+                        Value="{Binding CubletColumn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Rectangle Fill="{Binding CubletColor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Stroke="Black" />
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        
+        <!--Left Face-->
+        <ItemsControl ItemsSource="{Binding LeftFace}" Grid.Row="1" Grid.Column="0" Margin="20,0,0,0">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemContainerStyle>
+                <Style TargetType="ContentPresenter">
+                    <Setter Property="Grid.Row" 
+                        Value="{Binding CubletRow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Setter Property="Grid.Column" 
+                        Value="{Binding CubletColumn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Rectangle Fill="{Binding CubletColor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Stroke="Black" />
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <!--Front Face-->
+        <ItemsControl ItemsSource="{Binding FrontFace}" Grid.Row="1" Grid.Column="1">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemContainerStyle>
+                <Style TargetType="ContentPresenter">
+                    <Setter Property="Grid.Row" 
+                        Value="{Binding CubletRow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Setter Property="Grid.Column" 
+                        Value="{Binding CubletColumn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Rectangle Fill="{Binding CubletColor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Stroke="Black" />
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <!--Right Face-->
+        <ItemsControl ItemsSource="{Binding RightFace}" Grid.Row="1" Grid.Column="2">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemContainerStyle>
+                <Style TargetType="ContentPresenter">
+                    <Setter Property="Grid.Row" 
+                        Value="{Binding CubletRow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Setter Property="Grid.Column" 
+                        Value="{Binding CubletColumn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Rectangle Fill="{Binding CubletColor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Stroke="Black" />
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <!--Back Face-->
+        <ItemsControl ItemsSource="{Binding BackFace}" Grid.Row="1" Grid.Column="3" Margin="0,0,20,0">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemContainerStyle>
+                <Style TargetType="ContentPresenter">
+                    <Setter Property="Grid.Row" 
+                        Value="{Binding CubletRow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Setter Property="Grid.Column" 
+                        Value="{Binding CubletColumn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Rectangle Fill="{Binding CubletColor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Stroke="Black" />
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <!--Bottom Face-->
+        <ItemsControl ItemsSource="{Binding BottomFace}" Grid.Row="2" Grid.Column="1" Margin="0,0,0,20">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemContainerStyle>
+                <Style TargetType="ContentPresenter">
+                    <Setter Property="Grid.Row" 
+                        Value="{Binding CubletRow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Setter Property="Grid.Column" 
+                        Value="{Binding CubletColumn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Rectangle Fill="{Binding CubletColor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Stroke="Black" />
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <!--Labels-->
+        <Label Content="Clockwise =>" Grid.Row="2" Grid.Column="2" Margin="65,140,0,0"></Label>
+        <Label Content="Counter Clockwise =>" Grid.Row="2" Grid.Column="2" Margin="20,190,0,0"></Label>
+        <!--Controls-->
+        <Grid Grid.Row="2" Grid.Column="3" Margin="0,100,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Controls" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6"
+                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            <Button Content="Front" Grid.Row="1" Grid.Column="0" Tag="Clockwise" Click="Direction_Click" />
+            <Button Content="Right" Grid.Row="1" Grid.Column="1" Margin="5,0,0,0" Tag="Clockwise" Click="Direction_Click" />
+            <Button Content="Up" Grid.Row="1" Grid.Column="2" Margin="5,0,0,0" Tag="Clockwise" Click="Direction_Click" />
+            <Button Content="Bottom" Grid.Row="1" Grid.Column="3" Margin="5,0,0,0" Tag="Clockwise" Click="Direction_Click" />
+            <Button Content="Left" Grid.Row="1" Grid.Column="4" Margin="5,0,0,0" Tag="Clockwise" Click="Direction_Click" />
+            <Button Content="Down" Grid.Row="1" Grid.Column="5" Margin="5,0,0,0" Tag="Clockwise" Click="Direction_Click" />
+
+            <Button Content="Front" Grid.Row="2" Grid.Column="0" Margin="0,5,0,0" Tag="CounterClockwise" Click="Direction_Click" />
+            <Button Content="Right" Grid.Row="2" Grid.Column="1" Margin="5,5,0,0" Tag="CounterClockwise" Click="Direction_Click" />
+            <Button Content="Up" Grid.Row="2" Grid.Column="2" Margin="5,5,0,0" Tag="CounterClockwise" Click="Direction_Click" />
+            <Button Content="Bottom" Grid.Row="2" Grid.Column="3" Margin="5,5,0,0" Tag="CounterClockwise" Click="Direction_Click" />
+            <Button Content="Left" Grid.Row="2" Grid.Column="4" Margin="5,5,0,0" Tag="CounterClockwise" Click="Direction_Click" />
+            <Button Content="Down" Grid.Row="2" Grid.Column="5" Margin="5,5,0,0" Tag="CounterClockwise" Click="Direction_Click" />
+            <Button Content="Reset" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Margin="0,5,0,0" Click="Reset_Click" />
+        </Grid>
+    </Grid>
+</Window>
