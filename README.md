@@ -1,15 +1,11 @@
 ## Rubik's Cube in Flat View:
 
-The program is build using WPF.
+The program is build using WPF
 
 ## Requirements and installation:
 
 1. Visual Studio 2022 Community Edition
 2. Install .NET 8 Runtime
-
-Also you need to have this installed from the Visual Studio Installer
-
-![Desktop Development](https://github.com/user-attachments/assets/4bf1ad88-73fa-416e-be28-d4da4581b795)
 
 ## How to build:
 
